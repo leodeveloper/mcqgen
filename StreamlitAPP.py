@@ -48,3 +48,12 @@ with st.form("user_input"):
                 st.error("Something went wrong. Please try again.")
             else:
                 print(f"Total token:{cb.total_tokens}")
+                if isinstance(response,dict):
+                    quiz=response.get("quiz",None)
+                    if quiz is None:
+                        st.error("Something went wrong. Please try again.")
+                    else:
+                        st.success("MCQs generated successfully")
+                        st.write(quiz)
+                else:
+                    st.error("Something went wrong. Please try again.")
