@@ -1,5 +1,8 @@
 # MCQ Generator
 
+![MCQGeneratorFrontEnd](https://github.com/leodeveloper/mcqgen/blob/main/mcq%20generator%20Generative%20AI.png)
+
+
 ## Introduction
 This project aims to automate the process of generating multiple-choice questions (MCQs) using Generative AI techniques. Users can upload a text file containing relevant content, and our system utilizes Streamlit for the frontend, Python for backend processing, LangChain, LLM (Large Language Models), ChatGPT, and SequentialChain for generating MCQs. The entire system is deployed on AWS EC2 using MLOps methodologies for seamless integration and deployment.
 
