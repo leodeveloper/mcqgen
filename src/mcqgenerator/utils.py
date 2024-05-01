@@ -1,6 +1,6 @@
 import os
-import PyPDF2
 import json
+import PyPDF2
 import pandas as pd
 import traceback
 
@@ -8,10 +8,10 @@ import traceback
 def read_file(file):
     if file.name.endswith(".pdf"):
         try:
-            pdf_reader=PyPDF2.PdfFileReader(file)
+            pdf_reader=PyPDF2.PdfReader(file)
             text=""
             for page in pdf_reader.pages:
-                text+=page.extractText()
+                text+=page.extract_text()
             return text
         except Exception as e:
             raise Exception("error reading the PDF file")

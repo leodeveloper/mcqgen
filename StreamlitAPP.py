@@ -74,6 +74,8 @@ with st.form("user_inputs"):
                             st.text_area(label="Review", value=response["review"])
                         else:
                             st.error("Error in the table data")
+                    else:
+                        st.error("Error in the quiz")
 
                 else:
                     st.write(response)
