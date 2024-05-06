@@ -1,4 +1,5 @@
 import os
+import datetime
 import json
 import pandas as pd
 import traceback
@@ -19,7 +20,7 @@ st.title("MCQs Creator Application with LangChain 🦜⛓️")
 #Create a form using st.form
 with st.form("user_inputs"):
     #File Upload
-    uploaded_file=st.file_uploader("Uplaod a PDF or txt file")
+    uploaded_file=st.file_uploader("Uplaod a PDF, rtf or txt file")
 
     #Input Fields
     mcq_count=st.number_input("No. of MCQs", min_value=3, max_value=50)
@@ -61,6 +62,7 @@ with st.form("user_inputs"):
                 print(f"Prompt Tokens:{cb.prompt_tokens}")
                 print(f"Completion Tokens:{cb.completion_tokens}")
                 print(f"Total Cost:{cb.total_cost}")
+                print(f"Date and Time:{datetime.datetime.now()}")
                 if isinstance(response, dict):
                     #Extract the quiz data from the response
                     quiz=response.get("quiz", None)
