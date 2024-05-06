@@ -22,6 +22,22 @@ def read_file(file):
     elif file.name.endswith(".rtf"):
         return file.read().decode("utf-8")
     
+    elif file.name.endswith(".docx"):
+        return file.read()
+    
+    elif file.name.endswith(".doc"):
+        return file.read()
+    
+    #elif file.name.endswith(".jpeg"):
+        #return read_text_from_jpeg_image(file)
+    
+    #elif file.name.endswith(".png"):
+        #image = Image.open(file)  # Replace 'image.jpg' with the path to your image file
+        # Use pytesseract to do OCR on the image
+        #return pytesseract.image_to_string(image)
+         
+
+    
     else:
         raise Exception("unsopported file formate only pdf and text file supported")
     
@@ -44,3 +60,18 @@ def get_table_data(quiz_str):
     except Exception as e:
         traceback.print_exception(type(e),e,e.__traceback__)
         return False
+    
+
+#def read_text_from_jpeg_image(image_file):
+    # Create a BytesIO object containing the JPEG image data
+    #print(image_file)
+    #image_data = image_file.read()
+    #image_bytes_io = io.BytesIO(image_data)
+    
+    # Open the image BytesIO object using PIL
+    #image = Image.open(image_bytes_io)
+    
+    # Use pytesseract to do OCR on the image
+    #text = pytesseract.image_to_string(image)
+    
+    #return text
