@@ -2,6 +2,7 @@ openai
 langchain
 langchain-openai 
 streamlit
+st-pages
 python-dotenv
 PyPDF2
 

@@ -6,6 +6,7 @@ import traceback
 from dotenv import load_dotenv
 from src.mcqgenerator.utils import read_file,get_table_data
 import streamlit as st
+from st_pages import Page, show_pages, add_page_title
 from langchain_community.callbacks import get_openai_callback
 from src.mcqgenerator.MCQGenerator import generate_evaluate_chain
 from src.mcqgenerator.logger import logging
@@ -13,6 +14,11 @@ from src.mcqgenerator.logger import logging
 #loading json file
 with open('Response.json','r') as file:
     RESPONSE_JSON = json.load(file)
+
+st.set_page_config(
+    page_title="MCQ generator ai from pdf, text, doc, docs",
+    page_icon="🧊"
+)
 
 #creating a title for the app
 st.title("MCQs Creator Application with LangChain 🦜⛓️")
